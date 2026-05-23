@@ -360,7 +360,8 @@ fileprivate struct AnyExistentialContainer {
 ///
 /// In precedence order, the rules are:
 ///   - If the instance is itself a `String`, return the instance
-///   - If the instance is `CustomStringConvertible` or `CustomDebugStringConvertible`, use `String(reflecting:)`
+///   - If the instance conforms to `CustomStringConvertible`, use `String(describing:)` to call `.description` directly
+///   - If the instance conforms to `CustomDebugStringConvertible` (but NOT `CustomStringConvertible`), use `String(reflecting:)`
 ///   - If the instance is an enum (as reported using Mirror), use `String(describing:)`
 ///   - Otherwise, use the normalized type name
 fileprivate func generateSummary(for instance: Any, withTypeName typeNameProvider: @autoclosure () -> String, using mirrorProvider: @autoclosure () -> Mirror) -> String {
@@ -368,7 +369,14 @@ fileprivate func generateSummary(for instance: Any, withTypeName typeNameProvide
         return string
     }
 
-    if instance is CustomStringConvertible || instance is CustomDebugStringConvertible {
+    // Use String(describing:) for CustomStringConvertible so that .description is used directly,
+    // without the debug decoration (e.g. surrounding quotes) added by String(reflecting:).
+    if instance is CustomStringConvertible {
+        return String(describing: instance)
+    }
+
+    // Only fall back to String(reflecting:) for types that are solely CustomDebugStringConvertible.
+    if instance is CustomDebugStringConvertible {
         return String(reflecting: instance)
     }
 
