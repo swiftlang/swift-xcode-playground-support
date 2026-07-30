@@ -16,9 +16,9 @@
 CLANG_ENABLE_MODULES = YES
 
 // Set the macOS, iOS, and tvOS deployment targets to reasonable values.
-MACOSX_DEPLOYMENT_TARGET = 10.11
-IPHONEOS_DEPLOYMENT_TARGET = 10.0
-TVOS_DEPLOYMENT_TARGET = 10.0
+MACOSX_DEPLOYMENT_TARGET = 14.0
+IPHONEOS_DEPLOYMENT_TARGET = 17.0
+TVOS_DEPLOYMENT_TARGET = 17.0
 
 // Prefer to use the default toolchain when building (unless an overriding toolchain has been provided, in which case this build setting override will effectively be ignored).
 TOOLCHAINS = default
