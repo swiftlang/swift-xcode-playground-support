@@ -35,9 +35,9 @@ PlaygroundSupport offers a limited set of APIs for communicating specific
 requests to Xcode and should be self-explanatory.
 
 PlaygroundLogger is more complex and includes documentation on the API in
-[PlaygroundLogger/Documentation/LoggerAPI.md](PlaygroundLogger/Documentation/LoggerAPI.md)
+[Legacy/PlaygroundLogger/Documentation/LoggerAPI.md](Legacy/PlaygroundLogger/Documentation/LoggerAPI.md)
 and communication format in
-[PlaygroundLogger/Documentation/LoggerFormat.md](PlaygroundLogger/Documentation/LoggerFormat.md).
+[Legacy/PlaygroundLogger/Documentation/LoggerFormat.md](Legacy/PlaygroundLogger/Documentation/LoggerFormat.md).
 
 ## Working with Xcode Playground Support
 
