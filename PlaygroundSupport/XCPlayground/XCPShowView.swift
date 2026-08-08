@@ -10,14 +10,14 @@
 //
 //===----------------------------------------------------------------------===//
 
-#if os(OSX)
+#if os(macOS)
 import AppKit
 #elseif os(iOS) || os(tvOS)
 import UIKit
 #endif
 
 /// `XCPShowView` has been deprecated. Instead, set `XCPlaygroundPage.liveView` to the appropriate value.
-#if os(OSX)
+#if os(macOS)
 @available(*,deprecated,message:"Set 'PlaygroundPage.current.liveView' from the 'PlaygroundSupport' module instead")
 public func XCPShowView(identifier: String, view: NSView) {
     guard XCPlaygroundPage.currentPage.liveView == nil else { fatalError("Presenting multiple live views is not supported") }

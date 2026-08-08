@@ -103,7 +103,7 @@ extension _PlaygroundQuickLook {
                     return ImageOpaqueRepresentation(kind: .view, backedBy: image)
                 }
                 else {
-                    throw LoggingError.failedToGenerateOpaqueRepresentation(reason: "View is not an NSView or NSImage; is is '\(type(of: viewOrImage))' instead")
+                    throw LoggingError.failedToGenerateOpaqueRepresentation(reason: "View is not an NSView or NSImage; it is '\(type(of: viewOrImage))' instead")
                 }
             #elseif os(iOS) || os(tvOS)
                 if let view = viewOrImage as? UIView {
@@ -113,7 +113,7 @@ extension _PlaygroundQuickLook {
                     return ImageOpaqueRepresentation(kind: .view, backedBy: image)
                 }
                 else {
-                    throw LoggingError.failedToGenerateOpaqueRepresentation(reason: "View is not a UIView or UIImage; is is '\(type(of: viewOrImage))' instead")
+                    throw LoggingError.failedToGenerateOpaqueRepresentation(reason: "View is not a UIView or UIImage; it is '\(type(of: viewOrImage))' instead")
                 }
             #endif
         case let .sprite(imageObject):

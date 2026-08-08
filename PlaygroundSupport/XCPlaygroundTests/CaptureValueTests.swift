@@ -18,7 +18,7 @@ let captureValueNotification = Notification.Name(rawValue: "XCPCaptureValue")
 
 class CaptureValueTests: XCTestCase {
         
-    // MARK: Deprected XCPlaygroundPage
+    // MARK: Deprecated XCPlaygroundPage
     
     func testPlaygroundPageCaptureValue() {
         let value = 321
